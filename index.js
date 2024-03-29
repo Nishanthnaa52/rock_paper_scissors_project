@@ -13,7 +13,7 @@ if(!score) { //score === null
 }
 
 function display() {
-    document.querySelector('.score-display').innerHTML = `Win:${score.wins} losses:${score.losses} tie:${score.ties}`;
+    document.querySelector('.score-display').innerHTML = `Win:${score.wins}    losses:${score.losses}    tie:${score.ties}`;
 }
     
 display();
