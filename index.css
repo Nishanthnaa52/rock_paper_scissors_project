@@ -66,9 +66,9 @@ button {
     letter-spacing: 2px;
 }
 
-@media (max-width : 430px) {
+/* @media (max-width : 430px) {
     body {
         height: 1000px;
     }
-}
+} */
 
