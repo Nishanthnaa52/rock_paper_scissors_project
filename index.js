@@ -13,7 +13,7 @@ if(!score) { //score === null
 }
 
 function display() {
-    document.querySelector('.score-display').innerHTML = `Win:${score.wins}    losses:${score.losses}    tie:${score.ties}`;
+    document.querySelector('.score-display').innerHTML = `Win:${score.wins} losses:${score.losses} tie:${score.ties}`;
 }
     
 display();
@@ -86,5 +86,35 @@ function finalResult(playerMove) {
     localStorage.setItem('score',JSON.stringify(score));
 
     display();
+
+}
+
+const autoButton = document.querySelector('.auto-button');
+let autoPLlayId ;
+function autoPlay() {
+    if (autoButton.innerHTML === 'AUTO Play') {
+        autoPLlayId = setInterval( function () {
+            const ran = Math.random();
+            const checkVAlue = Math.round(ran*10);
+            let autoResult = '';
+
+            if (checkVAlue <= 3) {
+                autoResult = 'rock';
+            }else if ( checkVAlue <= 7) {
+                autoResult = 'paper';
+            }else {
+                autoResult = 'scissors';
+            }
+
+            finalResult(autoResult);
+        }, 1000);
+        autoButton.innerHTML = 'STOP Play';
+
+    }else {
+        autoButton.innerHTML = 'AUTO Play';
+        clearInterval(autoPLlayId);
+    }
+    
+
 
 }

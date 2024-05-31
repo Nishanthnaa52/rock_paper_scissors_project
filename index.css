@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(25,25,25);
+    background-color: rgb(25, 25, 25);
     color: white;
     font-family: Arial, Helvetica, sans-serif
 }
@@ -12,6 +12,7 @@ button {
     font-size: 44px;
     font-weight: bold;
     word-spacing: 10px;
+    letter-spacing: 2px;
     padding-left: 10px;
 }
 
@@ -19,14 +20,15 @@ button {
     word-spacing: 20px;
 }
 
-.reset-button {
+.reset-button,
+.auto-button {
     padding: 8px 13px;
     font-size: 15px;
     border: none;
 }
 
 .move-icon {
-   height: 50px;
+    height: 50px;
 }
 
 .move-button {
@@ -50,10 +52,22 @@ button {
     margin-left: 30px;
 }
 
-.reset-button {
+.reset-button,
+.auto-button {
     margin-top: 20px;
     padding: 20px 30px;
     border-radius: 20px;
     cursor: pointer;
 }
 
+
+.score-display {
+    word-spacing: 10px;
+    letter-spacing: 2px;
+}
+
+@media (max-width : 430px) {
+    body {
+        height: 1000px;
+    }
+}

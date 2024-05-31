@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Rock paper scissors</title>
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-    <center>
-      <p class="title-of-page">Rock Paper Scissors</p>
-      <p class="icon-box">
-        <button class="move-button" onclick = "finalResult('rock');"><img class="move-icon" src="img/rock-emoji.png" ></button>
-      
-        <button class="move-button" onclick = "finalResult('paper');"><img class="move-icon" src="img/paper-emoji.png"></button>
-      
-        <button class="move-button" onclick = "finalResult('scissors');"><img class="move-icon" src="img/scissors-emoji.png"></button>
-      </p>
-      <p class="displayresult result"></p>
-      <p class="display-move"></p>
-      <p class="score-display"></p>
-      <button class="reset-button" onclick = "score.wins = 0;score.losses = 0;score.ties = 0;localStorage.removeItem('score');display();">Reset score</button>
-    </center>
-  </body>
-  <script src="index.js"></script>
+
+<head>
+  <title>Rock paper scissors</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <center>
+    <p class="title-of-page">Rock Paper Scissors</p>
+    <p class="icon-box">
+      <button class="move-button" onclick="finalResult('rock');"><img class="move-icon"
+          src="img/rock-emoji.png"></button>
+
+      <button class="move-button" onclick="finalResult('paper');"><img class="move-icon"
+          src="img/paper-emoji.png"></button>
+
+      <button class="move-button" onclick="finalResult('scissors');"><img class="move-icon"
+          src="img/scissors-emoji.png"></button>
+    </p>
+    <p class="displayresult result"></p>
+    <p class="display-move"></p>
+    <p class="score-display"></p>
+    <button class="reset-button"
+      onclick="score.wins = 0;score.losses = 0;score.ties = 0;localStorage.removeItem('score');display();">Reset
+      score</button>
+    <button class="auto-button" onclick="autoPlay();">AUTO Play</button>
+  </center>
+</body>
+<script src="index.js"></script>
+
 </html>
