@@ -1,3 +1,6 @@
+
+// rock paper scissors game javascript.
+
 let score = JSON.parse(localStorage.getItem('score')) || {
     wins : 0,
     losses : 0,
@@ -12,11 +15,16 @@ if(!score) { //score === null
     };
 }
 
+// result display function.
+
 function display() {
     document.querySelector('.score-display').innerHTML = `Win:${score.wins} losses:${score.losses} tie:${score.ties}`;
 }
     
 display();
+
+
+// computer auto pike function.
 
 function pikeComputerMove() {
 
@@ -32,6 +40,9 @@ if(randomNumber >= 0 && randomNumber < 1 / 3){
 }
 return computerMove;
 }
+
+
+// main function section.
 
 function finalResult(playerMove) {
     const computerMove = pikeComputerMove();
@@ -89,6 +100,38 @@ function finalResult(playerMove) {
 
 }
 
+// Button event listener set section.
+
+
+document.querySelector('.js-rock-btn').addEventListener('click', () => {
+    finalResult('rock');
+});
+
+
+document.querySelector('.js-paper-btn').addEventListener('click', () => {
+    finalResult('paper');
+});
+
+document.querySelector('.js-scissors-btn').addEventListener('click', () => {
+    finalResult('scissors');
+});
+
+
+document.querySelector('.js-rest-btn').addEventListener('click', () => {
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    display()
+});
+
+document.querySelector('.js-auto-btn').addEventListener('click',() => {
+    autoPlay();
+});
+
+
+// auto play function section.
+
 const autoButton = document.querySelector('.auto-button');
 let autoPLlayId ;
 function autoPlay() {
@@ -114,8 +157,5 @@ function autoPlay() {
         autoButton.innerHTML = 'AUTO Play';
         clearInterval(autoPLlayId);
     }
-    
-
 
 }
-
