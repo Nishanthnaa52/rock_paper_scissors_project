@@ -117,9 +117,6 @@ document.querySelector('.js-scissors-btn').addEventListener('click', () => {
 });
 
 
-
-
-
 // auto play function section.
 
 const autoButton = document.querySelector('.auto-button');
@@ -156,4 +153,18 @@ function autoPlay() {
 
 document.querySelector('.js-auto-btn').addEventListener('click',() => {
     autoPlay();
+});
+
+
+document.body.addEventListener('keydown', (event) => {
+    if (event.key === 'r') {
+        finalResult('rock');
+    }else if (event.key === 'p') {
+        finalResult('paper');
+    }else if (event.key === 's') {
+        finalResult('scissors');
+    }
+    // else {
+    //     alert('Useing P, R, S to controlling.');
+    // }
 });
