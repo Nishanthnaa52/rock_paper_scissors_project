@@ -150,13 +150,9 @@ function autoPlay() {
 
 }
 
-document.querySelector('.js-rest-btn').addEventListener('click', () => {
-    score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
-    localStorage.removeItem('score');
-    display()
-});
+// document.querySelector('.js-rest-btn').addEventListener('click', () => {
+
+// });
 
 document.querySelector('.js-auto-btn').addEventListener('click',() => {
     autoPlay();
